@@ -4,5 +4,26 @@ function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+function reversedString(str) {
+    if(typeof str !== "string") throw new Error("Must pass a string to this function");
 
-module.exports = { capitalize };
+    return str.split("").reverse().join("");
+}
+
+const calculator = {
+    add: function(first, second) {
+        return first + second;
+    },
+    subtract: function(first, second) {
+        return first - second;
+    },
+    divide: function(first, second) {
+        return first / second;
+    },
+    multiply: function(first, second) {
+        return first * second;
+    }
+}
+
+
+module.exports = { capitalize, reversedString, calculator };

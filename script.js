@@ -64,7 +64,7 @@ function caesarCipher(str, factor) {
   for (let i = 0; i < str.length; i++) {
     
     if (regex.test(str[i])) {
-      index = baseArr.indexOf(str.toLowerCase()[i]) + effectiveShift;
+      let index = baseArr.indexOf(str.toLowerCase()[i]) + effectiveShift;
 
       if (index > 25) {
         index = index - 26;
@@ -83,4 +83,24 @@ function caesarCipher(str, factor) {
   return cipherString;
 }
 
-module.exports = { capitalize, reversedString, calculator, caesarCipher };
+function analyzeArray(arr) {
+
+  const sortedArr = [...arr].sort((a,b) => a - b);
+  let average = 0;
+
+  for(let i = 0; i < arr.length; i++) {
+    average += arr[i];
+  }
+
+  const arrObject = {
+    average: average / arr.length,
+    min: sortedArr[0],
+    max: sortedArr[arr.length -1],
+    length: arr.length,
+  };
+
+  return arrObject;
+
+}
+
+module.exports = { capitalize, reversedString, calculator, caesarCipher, analyzeArray };

@@ -1,4 +1,4 @@
-const { capitalize, reversedString, calculator, caesarCipher } = require("./script")
+const { capitalize, reversedString, calculator, caesarCipher, analyzeArray } = require("./script")
 
 test("Capitalize", () => {
     expect(capitalize("computer")).toBe("Computer");
@@ -34,4 +34,20 @@ test("Caesar Cipher: letter casing", () => {
 
 test("Caesar Cipher: Punctuation", () => {
     expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
+
+test("Array Object: average", () => {
+    expect(analyzeArray([1,8,3,4,2,6]).average).toBe(4);
+});
+
+test("Array Object: min", () => {
+    expect(analyzeArray([1,8,3,4,2,6]).min).toBe(1);
+});
+
+test("Array Object: max", () => {
+    expect(analyzeArray([1,8,3,4,2,6]).max).toBe(8);
+});
+
+test("Array Object: length", () => {
+    expect(analyzeArray([1,8,3,4,2,6]).length).toBe(6);
 });
